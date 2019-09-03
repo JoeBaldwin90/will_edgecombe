@@ -32,4 +32,16 @@ const grabDataFromContentful = function() {
     })
 }
 
-grabDataFromContentful();
+console.log(grabDataFromContentful())
+
+grabDataFromContentful().then(data => {
+  data.forEach(photo => {
+    mainContent.innerHTML = mainContent.innerHTML + `
+      <section class="frame">
+        <div class="image ${photo.title.replace(/ +/g, '-').toLowerCase()}">
+          <img src="${photo.file.url}" alt="${photo.description}" id="${photo.title.replace(/ +/g, '-').toLowerCase()}">
+        </div>
+      </section>
+    `
+  })
+});
