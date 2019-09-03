@@ -24,15 +24,18 @@ header {
 }
 
 section.frame {
-  height: 900px;
+  height: 450px;
   width: 100%;
-  margin-bottom: 50px;
   position: relative;
 
   // border: 2px @black dotted;
 
   .image {
     position: absolute;
+  }
+
+  &:nth-child(even) {
+    margin-bottom: 50px;
   }
 
   &:last-of-type {
